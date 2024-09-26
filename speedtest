@@ -1,18 +1,26 @@
 #!/bin/bash
 
-# 更新包列表
-sudo apt-get update
+# 下载脚本并赋予执行权限
+curl -s -o speedtest https://raw.githubusercontent.com/yida123/speedtest/refs/heads/main/speedtest
+chmod +x speedtest
 
-# 安装 curl
-sudo apt-get install -y curl
+# 检查是否已经安装了 speedtest
+if ! command -v speedtest &> /dev/null
+then
+    # 更新包列表
+    sudo apt-get update
 
-# 添加 Ookla Speedtest 的 APT 源
-curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
+    # 安装 curl
+    sudo apt-get install -y curl
 
-# 安装 speedtest
-sudo apt-get install -y speedtest
+    # 添加 Ookla Speedtest 的 APT 源
+    curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
 
-echo "Speedtest 安装完成！"
+    # 安装 speedtest
+    sudo apt-get install -y speedtest
+
+    echo "Speedtest 安装完成！"
+fi
 
 # 运行 speedtest
-speedtest
+./speedtest
