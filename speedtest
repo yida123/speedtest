@@ -23,4 +23,4 @@ then
 fi
 
 # 运行 speedtest
-./speedtest
+speedtest
