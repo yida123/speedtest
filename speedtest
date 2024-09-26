@@ -13,3 +13,6 @@ curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.
 sudo apt-get install -y speedtest
 
 echo "Speedtest 安装完成！"
+
+# 运行 speedtest
+speedtest
