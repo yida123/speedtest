@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# 更新包列表
+sudo apt-get update
+
+# 安装 curl
+sudo apt-get install -y curl
+
+# 添加 Ookla Speedtest 的 APT 源
+curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
+
+# 安装 speedtest
+sudo apt-get install -y speedtest
+
+echo "Speedtest 安装完成！"
